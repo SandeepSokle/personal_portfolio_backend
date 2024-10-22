@@ -38,11 +38,11 @@ mongoConnection();
 // };
 
 // var server = https.createServer(options, app);
-var server = https.createServer( app);
+// var server = https.createServer( app);
 const port = process.env.PORT || 3000
-server.listen(port, () => {
-  console.log("Listening securely on", port);
-});
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server is running on port ${port}`);
+})
 
 // const host = process.env.PORT || 8080;
 // app.listen(host, () => {
