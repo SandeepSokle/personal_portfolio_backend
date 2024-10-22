@@ -26,18 +26,19 @@ app.use("/user", userRouter);
 app.use("/message", receviedRouter);
 
 mongoConnection();
-const base = "/etc/letsencrypt/live/portfolio.webtechbharat.com/";
-const CERT = `${base}/fullchain.pem`;
-const PEM = `${base}/privkey.pem`;
-const CHAIN = `${base}/chain.pem`;
+// const base = "/etc/letsencrypt/live/portfolio.webtechbharat.com/";
+// const CERT = `${base}/fullchain.pem`;
+// const PEM = `${base}/privkey.pem`;
+// const CHAIN = `${base}/chain.pem`;
 
-const options = {
-  key: fs.readFileSync(PEM),
-  cert: fs.readFileSync(CERT),
-  ca: fs.readFileSync(CHAIN),
-};
+// const options = {
+//   key: fs.readFileSync(PEM),
+//   cert: fs.readFileSync(CERT),
+//   ca: fs.readFileSync(CHAIN),
+// };
 
-var server = https.createServer(options, app);
+// var server = https.createServer(options, app);
+var server = https.createServer( app);
 server.listen(443, () => {
   console.log("Listening securely on", 443);
 });
