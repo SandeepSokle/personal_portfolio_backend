@@ -39,8 +39,9 @@ mongoConnection();
 
 // var server = https.createServer(options, app);
 var server = https.createServer( app);
-server.listen(443, () => {
-  console.log("Listening securely on", 443);
+const port = process.env.PORT || 3000
+server.listen(port, () => {
+  console.log("Listening securely on", port);
 });
 
 // const host = process.env.PORT || 8080;
